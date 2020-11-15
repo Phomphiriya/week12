@@ -38,11 +38,9 @@ bool isEmpty() {
 int length() {
     int length = 0;
     struct node* current;
-
     for (current = head; current != NULL; current = current->next) {
         length++;
     }
-
     return length;
 }
 
@@ -84,7 +82,10 @@ void main() {
     }
     for (int i = 0; i < 10;i++)
     {
-        insertFirst(i, number[i]);
+        if (number[i] > 0 && number[i] != NULL)
+        {
+            insertFirst(i, number[i]);
+        }
     }
     printf("List : ");
     printList();
